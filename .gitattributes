@@ -1,0 +1,2 @@
+# Preserve the exact archived prompts, including whitespace.
+src/generation/prompts/** -whitespace

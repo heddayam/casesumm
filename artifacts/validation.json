@@ -1,0 +1,141 @@
+{
+  "case_count": 33,
+  "assessment_count": 57,
+  "sources": {
+    "gpt4": {
+      "sensitivity": {
+        "mean_rank": 2,
+        "responses": 57
+      },
+      "specificity": {
+        "mean_rank": 2.6140350877192984,
+        "responses": 57
+      },
+      "clarity": {
+        "mean_rank": 1.9649122807017543,
+        "responses": 57
+      },
+      "style": {
+        "mean_rank": 2.6491228070175437,
+        "responses": 57
+      },
+      "factual_error": {
+        "yes": 2,
+        "no": 55,
+        "missing": 0
+      }
+    },
+    "mistral": {
+      "sensitivity": {
+        "mean_rank": 2.7017543859649122,
+        "responses": 57
+      },
+      "specificity": {
+        "mean_rank": 3.1403508771929824,
+        "responses": 57
+      },
+      "clarity": {
+        "mean_rank": 3.43859649122807,
+        "responses": 57
+      },
+      "style": {
+        "mean_rank": 2.456140350877193,
+        "responses": 57
+      },
+      "factual_error": {
+        "yes": 10,
+        "no": 47,
+        "missing": 0
+      }
+    },
+    "oyez": {
+      "sensitivity": {
+        "mean_rank": 3.2982456140350878,
+        "responses": 57
+      },
+      "specificity": {
+        "mean_rank": 3.2982456140350878,
+        "responses": 57
+      },
+      "clarity": {
+        "mean_rank": 2.807017543859649,
+        "responses": 57
+      },
+      "style": {
+        "mean_rank": 3.210526315789474,
+        "responses": 57
+      },
+      "factual_error": {
+        "yes": 2,
+        "no": 55,
+        "missing": 0
+      }
+    },
+    "syllabus": {
+      "sensitivity": {
+        "mean_rank": 2.6140350877192984,
+        "responses": 57
+      },
+      "specificity": {
+        "mean_rank": 3.4210526315789473,
+        "responses": 57
+      },
+      "clarity": {
+        "mean_rank": 3.5964912280701755,
+        "responses": 57
+      },
+      "style": {
+        "mean_rank": 2.6315789473684212,
+        "responses": 57
+      },
+      "factual_error": {
+        "yes": 1,
+        "no": 56,
+        "missing": 0
+      }
+    },
+    "westlaw": {
+      "sensitivity": {
+        "mean_rank": 4.385964912280702,
+        "responses": 57
+      },
+      "specificity": {
+        "mean_rank": 2.526315789473684,
+        "responses": 57
+      },
+      "clarity": {
+        "mean_rank": 3.192982456140351,
+        "responses": 57
+      },
+      "style": {
+        "mean_rank": 4.052631578947368,
+        "responses": 57
+      },
+      "factual_error": {
+        "yes": 0,
+        "no": 57,
+        "missing": 0
+      }
+    }
+  },
+  "annotator_identifier_count": 8,
+  "export_group_count": 9,
+  "archived_ratings_match": true,
+  "benchmark_cases": 622,
+  "geval_rows": 1320,
+  "automatic_score_rows": 21656,
+  "splits": {
+    "train": {
+      "saved_rows": 23963,
+      "structured_rows": 5455
+    },
+    "dev": {
+      "saved_rows": 1633,
+      "structured_rows": 606
+    },
+    "test": {
+      "saved_rows": 1857,
+      "structured_rows": 830
+    }
+  }
+}

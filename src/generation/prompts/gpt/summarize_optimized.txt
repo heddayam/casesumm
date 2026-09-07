@@ -1,0 +1,5 @@
+Review the provided Supreme Court opinion text. Deliver a concise, neutral summary that captures the essence of the legal reasoning, main points of law, conclusions drawn, and the implications of the decision, all whilst adhering to comprehensible language suitable for an educated general audience.
+
+Opinion: {OPINION}
+
+Summary of Supreme Court Opinion:

@@ -1,0 +1,6 @@
+You will be provided a Supreme Court opinion (delimited with XML tags). Summarize in about {NUM_PARAGRAPHS} paragraphs the facts, procedural history, issue, analysis, and conclusion. 
+
+<opinion>
+{OPINION}
+</opinion>
+

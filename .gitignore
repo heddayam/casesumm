@@ -1,0 +1,39 @@
+# Local data, predictions, checkpoints, caches and credentials
+/data/
+/outputs/
+/checkpoints/
+/wandb/
+*.arrow
+*.parquet
+*.safetensors
+*.pt
+*.pth
+*.rdb
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+*key.txt
+*.pem
+*.key
+.DS_Store
+.vscode/
+.idea/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Third-party DSPy runtime caches
+/local_cache/

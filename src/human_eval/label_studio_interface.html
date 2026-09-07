@@ -1,0 +1,441 @@
+<View>
+    <Style>
+      .container {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+        max-width: 1500px;
+      }
+
+      .left-col{
+      flex-basis:60%;
+      margin-right: 40px;
+      margin-top:10px;
+      }
+
+      .right-col{
+      max-width: 40%;
+      }
+
+      .text-block {
+        flex: 1;
+        margin-right: 20px;
+      }
+
+      .assessment-items-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .assessment-item {
+
+        background-color: #ffffff;
+        padding: 1px;
+      }
+
+      .assessment-item-label {
+          margin-right: 20px;
+      }
+
+      .assessment-row {
+      display: flex;
+      align-items: center;
+      }
+
+      .assessment-item-check {
+          margin-left: 5px;
+          margin-bottom: 10px;
+      }
+
+      h4.ant-typography {
+          font-size: 14px;
+          font-weight: 400;
+      }
+
+      .lsf-hint {
+          display: none;
+      }
+
+      .case-check-row .lsf-choice {
+      padding-bottom: 10px;
+      }
+
+      .pdf-link {
+          font-size: 1.2em;
+          font-weight: 600;
+      }
+    </Style>
+    <View className="container">
+      <View className="left-col">
+        <View className="pdf-link">
+        <HyperText name="loc-pdf" value="$loc_url" inline="true" clickableLinks="true" />
+         </View>
+        <Header value="Have you read Supreme Court case $caseName?" size="8" />
+        <View className="case-check-row">
+          <View className="assessment-item-check">
+            <Choices name="readcase" toName="loc-pdf" showInline="false" choice="single-radio" required="true">
+              <Choice value="Yes" />
+              <Choice value="No (If no, then please go and read this case.  End survey.)" />
+            </Choices>
+          </View>
+        </View>
+        <View visibleWhen="choice-selected" whenTagName="readcase" whenChoiceValue="Yes">
+        <Header value="Please read each of the following 5 summaries of the Supreme Court case.  Each summary is given a label from A to E." size="8" />
+        <Collapse>
+          <Panel value="Summary A" name="summary0">
+            <View><Text name="summary0_text" value="$summary0" /></View>
+          </Panel>
+        </Collapse>
+        <Collapse>
+          <Panel value="Summary B" name="summary1">
+            <View><Text name="summary1_text" value="$summary1" /></View>
+          </Panel>
+        </Collapse>
+        <Collapse>
+          <Panel value="Summary C" name="summary2">
+            <View><Text name="summary2_text" value="$summary2" /></View>
+          </Panel>
+        </Collapse>
+        <Collapse>
+          <Panel value="Summary D" name="summary3">
+            <View><Text name="summary3_text" value="$summary3" /></View>
+          </Panel>
+        </Collapse>
+        <Collapse>
+          <Panel value="Summary E" name="summary4">
+            <View><Text name="summary4_text" value="$summary4" /></View>
+          </Panel>
+        </Collapse>
+         </View>
+      </View>
+     <View className="right-col">
+
+      <View visibleWhen="choice-selected" whenTagName="readcase" whenChoiceValue="Yes">
+
+      <Header value="Please rank the 5 summaries on the following criteria, with the best summary ranked 1 and the worst summary ranked 5. You must rank each summary. NO TWO SUMMARIES CAN HAVE THE SAME RANK." size="8" />
+
+      <View className="assessment-item-container">
+        <Header value="1. Does this summary INCLUDE all RELEVANT information required to understand the facts, judgment and reasoning? We want you to rank summaries on how informative they are. Rank 1-5, with 1 being best (includes most relevant information)" size="8" />
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 1: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="relevant1" toName="summary0_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 2: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="relevant2" toName="summary0_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 3: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="relevant3" toName="summary0_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 4: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="relevant4" toName="summary0_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 5: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="relevant5" toName="summary0_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <Header value="2. Does this summary EXCLUDE IRRELEVANT information that is not required to understand the facts, judgment and reasoning? We want you to rank summaries on how well they exclude irrelevant information.  Rank 1-5, with 1 being best (least irrelevant information)" size="8" />
+       <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 1: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="irrelevant1" toName="summary1_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 2: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="irrelevant2" toName="summary1_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 3: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="irrelevant3" toName="summary1_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 4: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="irrelevant4" toName="summary1_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 5: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="irrelevant5" toName="summary1_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+        <Header value="3. Is this summary clear and easy to read? Rank 1-5, with 1 being best (clearest)" size="8" />
+       <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 1: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="clear1" toName="summary2_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 2: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="clear2" toName="summary2_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 3: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="clear3" toName="summary2_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 4: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="clear4" toName="summary2_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 5: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="clear5" toName="summary2_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <Header value="4. Does this summary have a legal style, defined as something written by a well-trained lawyer? Rank 1-5, with 1 being best (best legal style)" size="8" />
+       <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 1: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="style1" toName="summary3_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 2: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="style2" toName="summary3_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 3: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="style3" toName="summary3_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 4: "/>
+          </View>
+          <View className="assessment-item">
+            <Choices name="style4" toName="summary3_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <View className="assessment-row">
+          <View className="assessment-item-label">
+              <Header value="Rank 5: " />
+          </View>
+          <View className="assessment-item">
+            <Choices name="style5" toName="summary3_text" showInline="true" choice="single-radio" required="true">
+              <Choice value="A" />
+              <Choice value="B" />
+              <Choice value="C" />
+              <Choice value="D" />
+              <Choice value="E" />
+            </Choices>
+          </View>
+        </View>
+
+        <Header value="Can you confirm that no two summaries have the same rank for any given metric?" size="8" />
+       <View className="assessment-row case-check-row">
+          <View className="assessment-item">
+            <Choices name="samerank" toName="loc-pdf" showInline="false" choice="single-radio" required="true">
+              <Choice value="Yes" />
+              <Choice value="No (if no, then go back and make sure no two summaries have the same rank." />
+            </Choices>
+          </View>
+        </View>
+
+        </View>
+      </View>
+    </View>
+      </View>
+  </View>
